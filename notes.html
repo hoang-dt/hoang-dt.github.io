@@ -134,6 +134,53 @@
       <div class="column-left">
         <span class="year">2016</span>
         <div class="title">
+          bi-Laplacian Interpolants
+        </div>
+        <div class="venue">
+
+        </div>
+        <div class="note2">&#9733; Best Student Poster 2017</div> 
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="bi-laplacian_weights.txt">Derivation</a> &nbsp; &nbsp;
+          <a href="https://www.sci.utah.edu/~duong/code/bi-laplacian-interpolation.zip">Code</a> &nbsp; &nbsp;
+        </div>
+        <div class="abstract">          
+          Given a 2D field sampled on a regular grid, we construct a multiresolution hierarchy by the following process.
+          We first group the grid samples into blocks, then subsample the blocks by throwing away every other block along an axis to create the next coarser resolution level.
+          The subsampling process can be done recursively on the subsequent resolution levels, alternating between the axes.
+          The reason the downsampling is done this way is so that we can still perform effective compression within each block due to data coherency.
+          (In a regular subsampling process, the data points at coarse resolution levels are further and further apart, thus are less coherent, which can severely hurt compression.)
+          During reconstruction, however, we need to solve the "hole-filling" problem, since now a number of blocks are missing and will need to be filled in by interpolation.
+          I have implemented an interpolation method by solving the bi-Laplacian (or bi-harmonic) constraints.
+          Basically, if x is a known sample, we want the reconstructed function to interpolate x.
+          If x is an unknown sample, we wish to set its Laplacian or bi-Laplacian to zero.          
+          <p>
+          In this example, we use a 384 x 384-pixel slice from a 3D simulation dataset.
+          This is produced by solving the bi-Laplacian equation on the subsampled data. 
+          I used a bi-Conjugate gradient solver with an incomplete LU preconditioner (without which the iteration did not converge). 
+          The initial guess is one in which the known samples are there, and the unknown ones are set to 0. 
+          The number of iterations depend on the stopping tolerance, but is typically between 10 and 20. 
+          We can see that the top and right boundaries are not resolved well. 
+          This is because we don't have known samples at these boundaries.
+          In general, I noticed it becomes much harder for the iteration to converge every time we go down one level in resolution.
+          I had to tweak the preconditioner to make it more aggressive.           
+          It may be interesting to see if a better initial guess (with bilinear interpolation for example) would help with convergence.
+          </p>          
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="bi-laplacian-interpolation.jpg"><img class="image" src="bi-laplacian-interpolation.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2016</span>
+        <div class="title">
           Approximate Nearest Neighbors
         </div>
         <div class="venue">
