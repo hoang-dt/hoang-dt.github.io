@@ -93,6 +93,38 @@
     <div class="row">
       <!-- Title, venue, and abstract -->
       <div class="column-left">
+        <span class="year">2019</span>
+        <div class="title">
+          Linear-Lifting Wavelet Extrapolation
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="https://www.sci.utah.edu/~duong/code/extrapolation.cpp">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Since wavelet transforms are computed for powers of two, their practical application often require extending the signal to suitable lengths. 
+          Whereas several approaches exist for this extension (e.g., zero padding, linear extrapolation, and symmetric extension), each is associated with different types of boundary artifacts, such as discontinuous and nonsmooth signal that lead to large wavelet coefficients, which may or may not be conducive to an application.           
+          We present a new, linear-lifting approach to extend the input function at the boundary that avoids such artifacts and helps contain the number of unneccesary cells near the boundary. 
+          Specifically, our approach interleaves linear extrapolation with lifting steps to produce a function that is smooth across all dimensions. 
+          Unlike mirror-based extensions, linear extrapolation renders the lifting steps noninvertible, because to maintain the size of the data, the extrapolated coefficient is usually not kept in memory after the forward lifting step. 
+          In order to support perfect reconstruction, we choose to pay the extra storage cost and maintain the coefficient in memory. 
+          However, in practice, the inverse lifting steps are never performed, and thus the extrapolated function is never explicitly computed or stored.           
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="extrapolation.jpg"><img class="image" src="extrapolation.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
         <span class="year">2018</span>
         <div class="title">
           Arithmetic Coding
