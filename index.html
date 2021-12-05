@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Duong Hoang's personal page </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans|Montserrat">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // When the user clicks on <div>, open the popup
+    function show(s) {
+      var element = document.getElementById(s);
+      console.log(element);
+      // element.visibility = "visible";
+      if (element.style.display == "block") {
+        element.style.display = "none";
+      } else {
+        element.style.display = "block";
+      }
+    }
+
+    function toggleImg(s) {
+      var modal = document.getElementById(s + "-modal");
+      var img = document.getElementById(s + "-fig");
+      var modalImg = document.getElementById(s + "-fig-modal");
+      var captionText = document.getElementById(s + "-caption");
+      modal.style.display = "table";
+      modalImg.src = img.src;
+      modalImg.display = "table-row";
+      //captionText.innerHTML = img.alt;
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</head>
+
+<body style="margin-bottom: 24px !important;">
+
+  <header>
+    <div class="header-content">
+      <h2>Duong Hoang /zuong hwang/ &nbsp; &#8212; &nbsp; Publications</h2>
+      <div class="avatar"><img style="max-width:14%;" src="duong.png"></div>
+      <p style="margin-top: -7rem;"><small>
+          I am doing a PhD in Computer Science at the University of Utah. My research interests
+          include data compression, scientific data visualization and analysis, computer graphics,
+          scientific computing, and other topics in applied mathematics.
+          I can be reached via: {first name}@sci.utah.edu, <a href="https://github.com/hoangthaiduong">Github</a>, <a href="https://twitter.com/_dhoang">Twitter</a>, or
+          <a href="https://www.linkedin.com/in/hoangdt/">LinkedIn</a>.
+          Here are my latest <a href="https://www.sci.utah.edu/~duong/duong-hoang-resume-nov-21.pdf"> resume</a>
+          and my <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F4KBgZLXly1OtcNiw8T3UH1iiR_kg8HxW_kQSxL955EezszYEjyz6CT5DYpsASTPtoUNOyh2ljSUcCHJcoocGCXW5APwAYPfLDO1xgpryl57XTbtk0&user=NXy2IAQAAAAJ">Google Scholar profile</a>.
+        </small></p>
+      <nav>
+        <a href="https://www.sci.utah.edu/~duong/"
+          style="border-radius: 0.1rem; padding: 0.3rem; background-color:#BCEBED; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);">
+          Publications </a>
+        <a href="https://www.sci.utah.edu/~duong/blog/"> Blog </a>
+        <a href="code.html"> Code </a>
+        <a href="notes.html"> Notes </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- <h1> Research  </h1> -->
+
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2021 conference paper</span>
+        <div class="title">
+          High-Quality and Low-Memory-Footprint Progressive Decoding of<br> Large-scale Particle Data
+        </div>
+        <div class="venue">
+          IEEE Symposium on Large Data Analysis and Visualization (LDAV)
+        </div>
+        <div class="note">&#9733; Best Paper Honorable Mention</div>
+        <div class="author">
+          Duong Hoang &nbsp; &nbsp;
+          Harsh Bhatia &nbsp; &nbsp;
+          Peter Lindstrom &nbsp; &nbsp;
+          Valerio Pascucci &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hoang-particles-ldav-2021-paper.pdf">PDF</a> &nbsp;
+          &nbsp;
+          <a href="https://www.youtube.com/watch?v=tuPUwyG_YBA">Talk</a> &nbsp; &nbsp;
+          <a href="https://github.com/hoangthaiduong/binomial_coding">Code</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-particles-ldav-2021-slides.pdf">Slides</a> &nbsp;
+          &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-particles-ldav-2021-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          Particle representations are used often in large-scale simulations and observations, frequently
+          creating datasets containing several millions of particles or more.
+          Due to their sheer size, such datasets are difficult to store, transfer, and analyze efficiently.
+          Data compression is a promising solution; however, effective approaches to compress particle data
+          are lacking and no community-standard and accepted techniques exist.
+          Current techniques are designed either to compress small data very well but require high
+          computational resources when applied to large data, or to work with large data but without a focus
+          on compression, resulting in low reconstruction quality per bit stored.
+          In this paper, we present innovations targeting tree-based particle compression approaches that
+          improve the tradeoff between high quality and low memory-footprint for compression and decompression
+          of large particle datasets.
+          Inspired by the lazy wavelet transform, we introduce a new way of partitioning space, which allows a
+          low-cost depth-first traversal of a particle hierarchy to cover the space broadly.
+          We also devise novel data-adaptive traversal orders that significantly reduce reconstruction error
+          compared to traditional data-agnostic orders such as breadth-first and depth-first traversals.
+          The new partitioning and traversal schemes are used to build novel particle hierarchies that can be
+          traversed with asymptotically constant memory footprint while incurring low reconstruction error.
+          Our solution to encoding and decoding of large particle data is a flexible block-based hierarchy
+          that supports progressive, random-access, and error-driven decoding, where error heuristics can be
+          supplied by the user.
+          Through extensive experimentation, we demonstrate the efficacy and the flexibility of the proposed
+          techniques when combined as well as when used independently with existing approaches on a wide range
+          of scientific particle datasets.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-particles-ldav-2021-img.jpg"><img class="image" src="hoang-particles-ldav-2021-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2021 conference paper</span>
+        <div class="title">
+          Load-Balancing Parallel I/O of <br> Compressed Hierarchical Layouts
+        </div>
+        <div class="venue">
+          IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC)
+        </div>
+        <div class="author">
+          Ke Fan &nbsp; &nbsp;
+          Duong Hoang &nbsp; &nbsp;
+          Steve Petruzza <br>
+          Thomas Gilray &nbsp; &nbsp;
+          Valerio Pascucci &nbsp; &nbsp;
+          Sidharth Kumar &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/fan-load-balancing-hipc-2021-paper.pdf">PDF</a> &nbsp;
+          &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/fan-load-balancing-hipc-2021-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          Scientific phenomena are being simulated at ever-increasing resolution and fidelity thanks to
+          advances in modern supercomputers.
+          These simulations produce a deluge of data, putting unprecedented demand on the end-to-end
+          data-movement pipeline that consists of parallel writes for checkpoint and analysis dumps and
+          parallel localized reads for exploratory analysis and visualization tasks.
+          Parallel I/O libraries are often optimized for uniformly distributed large-sized accesses, whereas
+          reads for analysis and visualization benefit from data layouts that enable random-access and
+          multiresolution queries.
+          While multiresolution layouts enable interactive exploration of massive datasets, efficiently
+          writing such layouts in parallel is challenging, and straightforward methods for creating a
+          multiresolution hierarchy can lead to inefficient memory and disk access.
+          In this paper, we propose a compressed, hierarchical layout that facilitates efficient parallel
+          writes, while being efficient at serving random access, multiresolution read queries for post-hoc
+          analysis and visualization.
+          To efficiently write data to such a layout in parallel is challenging due to potential
+          load-balancing issues at both the data transformation and disk I/O steps.
+          Data is often not readily distributed in a way that facilitates efficient transformations necessary
+          for creating a multiresolution hierarchy.
+          Further, when compression or data reduction is applied, the compressed data chunks may end up with
+          different sizes, confounding efficient parallel I/O.
+          To overcome both these issues, we present a novel two-phase load-balancing strategy to optimize both
+          memory and disk access patterns unique to writing non-uniform multiresolution data.
+          We implement these strategies in a parallel I/O library and evaluate the efficacy of our approach by
+          using real-world simulation data and a novel approach to microbenchmarking on the Theta
+          Supercomputer of Argonne National Laboratory.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="fan-load-balancing-hipc-2021-img.jpg"><img class="image"
+            src="fan-load-balancing-hipc-2021-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2021 journal paper, presented at IEEE VIS 2020</span>
+        <div class="title">
+          Efficient and Flexible Hierarchical<br> Data Layouts for a Unified Encoding of <br>Scalar Field
+          Precision and Resolution
+        </div>
+        <div class="venue">
+          <a href="https://ieeexplore.ieee.org/document/9222049">IEEE Transactions on Visualization and
+            Computer Graphics</a>
+        </div>
+        <div class="author">
+          Duong Hoang &nbsp; &nbsp;
+          Brian Summa &nbsp; &nbsp;
+          Harsh Bhatia &nbsp; &nbsp;
+          Peter Lindstrom <br>
+          Pavol Klacansky &nbsp; &nbsp;
+          Will Usher &nbsp; &nbsp;
+          Peer-Timo Bremer &nbsp; &nbsp;
+          Valerio Pascucci
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hoang-data-layout-tvcg-2021-paper.pdf">PDF</a> &nbsp;
+          &nbsp;
+          <a href="https://youtu.be/gSQglICXNd0?t=5968">Talk</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-data-layout-tvcg-2021-slides.pptx">Slides</a>
+          &nbsp; &nbsp;
+          <a href="https://github.com/sci-visus/idx2">Code</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-data-layout-tvcg-2021-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          To address the problem of ever-growing scientific data sizes making data movement a major hindrance
+          to analysis, we introduce a novel encoding for scalar fields: a unified tree of resolution and
+          precision, specifically constructed so that valid cuts correspond to sensible approximations of the
+          original field in the precision-resolution space.
+          Furthermore, we introduce a highly flexible encoding of such trees that forms a parameterized family
+          of data hierarchies.
+          We discuss how different parameter choices lead to different trade-offs in practice, and show how
+          specific choices result in known data representation schemes such as ZFP, IDX, and JPEG2000.
+          Finally, we provide system-level details and empirical evidence on how such hierarchies facilitate
+          common approximate queries with minimal data movement and time, using real-world data sets ranging
+          from a few gigabytes to nearly a terabyte in size.
+          Experiments suggest that our new strategy of combining reductions in resolution and precision is
+          competitive with state-of-the-art compression techniques with respect to data quality, while being
+          significantly more flexible and orders of magnitude faster, and requiring significantly reduced
+          resources.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-data-layout-tvcg-2021-img.jpg"><img class="image" src="hoang-data-layout-tvcg-2021-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2019 technical report</span>
+        <div class="title">
+          AMM: Adaptive Multilinear Meshes
+        </div>
+        <div class="venue">
+          <a href="https://arxiv.org/abs/2007.15219">arXiv e-prints, p.arXiv:2007.15219</a>
+        </div>
+        <div class="author">
+          Harsh Bhatia &nbsp; &nbsp;
+          Duong Hoang &nbsp; &nbsp;
+          Garrett Morrison &nbsp; &nbsp;
+          Will Usher <br>
+          Valerio Pascucci &nbsp; &nbsp;
+          Peer-Timo Bremer &nbsp; &nbsp;
+          Peter Lindstrom &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/pdf/2007.15219">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/bhatia-amm-arXiv-2019-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          We present Adaptive Multilinear Meshes (AMM), a new framework that significantly reduces the memory
+          footprint compared to existing data structures.
+          AMM uses a hierarchy of cuboidal cells to create continuous, piecewise multilinear representation of
+          uniformly sampled data.
+          Furthermore, AMM can selectively relax or enforce constraints on conformity, continuity, and
+          coverage, creating a highly adaptive and flexible representation to support a wide range of use
+          cases.
+          AMM supports incremental updates in both spatial resolution and numerical precision establishing the
+          first practical data structure that can seamlessly explore the tradeoff between resolution and
+          precision.
+          We use tensor products of linear B-spline wavelets to create an adaptive representation and
+          illustrate the advantages of our framework.
+          AMM provides a simple interface for evaluating the function defined on the adaptive mesh,
+          efficiently traversing the mesh, and manipulating the mesh, including incremental, partial updates.
+          Our framework is easy to adopt for standard visualization and analysis tasks.
+          As an example, we provide a VTK interface, through efficient on-demand conversion, which can be used
+          directly by corresponding tools, such as VisIt, disseminating the advantages of faster processing
+          and a smaller memory footprint to a wider audience.
+          We demonstrate the advantages of our approach for simplifying scalar-valued data for commonly used
+          visualization and analysis tasks using incremental construction, according to mixed resolution and
+          precision data streams.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="bhatia-amm-arXiv-2019-img.jpg"><img class="image" src="bhatia-amm-arXiv-2019-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2019 journal paper, presented at IEEE VIS 2018</span>
+        <div class="title">
+          A Study of the Trade-off Between <br>Reducing Precision and Reducing Resolution <br> for Data Analysis and
+          Visualization
+        </div>
+        <div class="venue">
+          <a href="https://ieeexplore.ieee.org/document/8440822">IEEE Transactions on Visualization and Computer
+            Graphics</a>
+        </div>
+        <div class="author">
+          Duong Hoang &nbsp; &nbsp;
+          Pavol Klacansky &nbsp; &nbsp;
+          Harsh Bhatia &nbsp; &nbsp;<br>
+          Peer-Timo Bremer &nbsp; &nbsp;
+          Peter Lindstrom &nbsp; &nbsp;
+          Valerio Pascucci &nbsp; &nbsp;          
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hoang-study-tvcg-2019-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-study-tvcg-2019-slides.pptx">Slides</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-study-tvcg-2019-supplementary.pdf">Supplementary</a> &nbsp;
+          &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-study-tvcg-2019-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          There currently exist two dominant strategies to reduce data sizes in analysis and visualization: reducing the
+          precision of the data, e.g., through quantization, or reducing its resolution, e.g., by subsampling.
+          Both have advantages and disadvantages and both face fundamental limits at which the reduced information
+          ceases to be useful.
+          The paper explores the additional gains that could be achieved by combining both strategies.
+          In particular, we present a common framework that allows us to study the trade-off in reducing precision
+          and/or resolution in a principled manner.
+          We represent data reduction schemes as progressive streams of bits and study how various bit orderings such as
+          by resolution, by precision, etc., impact the resulting approximation error across a variety of data sets as
+          well as analysis tasks.
+          Furthermore, we compute streams that are optimized for different tasks to serve as lower bounds on the
+          achievable error.
+          Scientific data management systems can use the results presented in this paper as guidance on how to store and
+          stream data to make efficient use of the limited storage and bandwidth in practice.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-study-tvcg-2019-img.jpg"><img class="image" src="hoang-study-tvcg-2019-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2017 conference poster</span>
+        <div class="title">
+          Accelerating In-situ Feature Extraction <br>of Large-Scale Combustion Simulation <br> with Subsampling
+        </div>
+        <div class="venue">
+          <a href="https://dl.acm.org/doi/proceedings/10.1145/3078597">The International ACM Symposium on
+            High-Performance <br> Parallel and Distributed Computing (HPDC)</a>
+        </div>
+        <div class="author">
+          Sidharth Kumar &nbsp; &nbsp;
+          Steve Petruzza &nbsp; &nbsp;
+          Duong Hoang &nbsp; &nbsp;
+          Valerio Pascucci
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/kumar-in-situ-hpdc-2017-poster.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/kumar-in-situ-hpdc-2017-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          The increasing gap between available compute power and I/O capabilities is driving more users to adopt in-situ
+          processing capabilities.
+          However, making the transition from post-processing to in-situ mode is challenging, as parallel analysis
+          algorithms do not always scale well with the actual simulation code.
+          This is observed because these algorithms either involve global reduction operations with significant
+          communication overheads or have to perform an overwhelmingly large amount of computation.
+          In this work we propose a software stack, designed specially to expedite parallel analysis algorithms, thus
+          making it possible for them to work in in-situ mode.
+          Our software stack comprises of data-reduction techniques, sub-sampling and compression, used to reduce the
+          computation load of the analysis algorithm.
+          For better approximation of data, we can also use wavelets instead of sub sampling. We demonstrate the
+          efficacy of our pipeline using two analysis algorithms, parallel merge tree and isosurface rendering.
+          We also study the trade-offs between the I/O gains and the corresponding error induced by the data reduction
+          techniques.
+          We present results with KARFS simulation framework run on the Tesla cluster of the Scientific computing and
+          Imaging institute at the University of Utah.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="kumar-in-situ-hpdc-2017-img.jpg"><img class="image" src="kumar-in-situ-hpdc-2017-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2017 conference paper</span>
+        <div class="title">
+          Reducing Network Congestion and Synchronization Overhead During <br> Aggregation of Hierarchical Data
+        </div>
+        <div class="venue">
+          <a href="https://ieeexplore.ieee.org/document/8287753/">IEEE International Conference on High Performance
+            Computing, Data, and Analytics (HiPC)</a>
+        </div>
+        <div class="author">
+          Sidharth Kumar &nbsp; &nbsp;
+          Duong Hoang (joint first author) <br>
+          Steve Petruzza &nbsp; &nbsp;
+          John Edwards &nbsp; &nbsp;
+          Valerio Pascucci &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/kumar-network-hipc-2017-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/kumar-network-hipc-2017-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          Hierarchical data representations have been shown to be effective tools for coping with large-scale scientific
+          data.
+          Writing hierarchical data on supercomputers, however, is challenging as it often involves all-to-one
+          communication during aggregation of low-resolution data which tends to span the entire network domain,
+          resulting in several bottlenecks.
+          We introduce the concept of indexing templates, which succinctly describe data organization and can be used to
+          alter movement of data in beneficial ways.
+          We present two techniques, domain partitioning and localized aggregation, that leverage indexing templates to
+          alleviate congestion and synchronization overheads during data aggregation.
+          We report experimental results that show significant I/O speedup using our proposed schemes on two of today’s
+          fastest supercomputers, Mira and Shaheen II, using the Uintah and S3D simulation frameworks.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="kumar-network-hipc-2017-img.jpg"><img class="image" src="kumar-network-hipc-2017-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2016 conference poster</span>
+        <div class="title">
+          Visualizing Publication Data
+        </div>
+        <div class="venue">
+          IEEE Visualization Conference (VIS)
+        </div>
+        <div class="author">
+          Kui Wu &nbsp; &nbsp;
+          Duong Hoang &nbsp; &nbsp;
+          Alexander Lex
+        </div>
+        <div class="note2">
+          Best Project 2015 - University of Utah’s CS-5630 (Visualization)</a>
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/wu-pubvis-vis-2016-poster.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="https://vimeo.com/182984971">Video</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/kumar-network-hipc-2017-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          PubVis is an interactive tool to visualize connections between papers published over multiple years in a
+          collection of papers.
+          It provides users with a multi-faceted way to explore research topics of interest, spot their trends over
+          time, and find high-impact papers and influential authors on the topics.
+          Navigation is done through following citation relationships and shared-keyword relationships among papers, as
+          well as collaboration relationships among authors.
+          PubVis’s strength lies in its light abstraction model and ease of interaction, while being able to present a
+          large amount of information to users at once.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="wu-pubvis-vis-2016-img.jpg"><img class="image" src="wu-pubvis-vis-2016-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2013 conference paper</span>
+        <div class="title">
+          Control of Rotational Dynamics<br> for Ground Behaviors
+        </div>
+        <div class="venue">
+          <a href="https://dl.acm.org/doi/10.1145/2485895.2485906">ACM SIGGRAPH/Eurographics Symposium <br>on Computer
+            Animation (SCA)</a>
+        </div>
+        <div class="author">
+          David Brown &nbsp; &nbsp;
+          Adriano Macchietto &nbsp; &nbsp;
+          KangKang Yin &nbsp; &nbsp;
+          Victor Zordan &nbsp; &nbsp;
+        </div>
+        <div class="note2">
+          I improved the paper's rendering system to add per-pixel lighting and ambient occlusion, which greatly
+          improves realism, by highlighting ground contact shadows for the various rolling motions in this paper.
+          I also ran experiments, and helped render some of the results for the paper.
+        </div>
+        <div class="abstract">
+          This paper proposes a physics-based framework to generate rolling behaviors with significant rotational
+          components.
+          The proposed technique is a general approach for guiding coordinated action that can be layered over existing
+          control architectures through the purposeful regulation of specific whole-body features.
+          Namely, we apply control for rotation through the specification and execution of specific desired 'rotation
+          indices' for whole-body orientation, angular velocity and angular momentum control.
+          We account for the stylistic components of behaviors through reference posture control.
+          The novelty of the described work includes control over behaviors with considerable rotational components as
+          well as a number of characteristics useful for general control, such as flexible posture tracking and contact
+          control planning.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="brown-rotation-sca-2013-img.jpg"><img class="image" src="brown-rotation-sca-2013-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012 journal paper</span>
+        <div class="title">
+          Detail-Preserving Controllable Deformation from Sparse Examples
+        </div>
+        <div class="venue">
+          <a href="https://ieeexplore.ieee.org/abstract/document/6171183">IEEE Transactions on Visualization and
+            Computer Graphics</a>
+        </div>
+        <div class="author">
+          Haoda Huang &nbsp; &nbsp;
+          KangKang Yin &nbsp; &nbsp;
+          Ling Zhao &nbsp; &nbsp; <br>
+          Yue Qi &nbsp; &nbsp;
+          Yizhou Yu &nbsp; &nbsp;
+          Xin Tong &nbsp; &nbsp;
+        </div>
+        <div class="note2">
+          This is the journal extension of a conference paper.
+          I wrote all the code required to run new experiments, corrected flawed data, and generated the new results in
+          this paper.
+          I also implemented a new inverse kinematics method to reduce the number of input markers for training bone
+          deformations, making the training faster.
+        </div>
+        <div class="abstract">
+          Recent advances in laser scanning technology have made it possible to faithfully scan a real object with tiny
+          geometric details, such as pores and wrinkles.
+          However, a faithful digital model should not only capture static details of the real counterpart but also be
+          able to reproduce the deformed versions of such details.
+          In this paper, we develop a data-driven model that has two components; the first accommodates smooth
+          large-scale deformations and the second captures high-resolution details.
+          Large-scale deformations are based on a nonlinear mapping between sparse control points and bone
+          transformations.
+          A global mapping, however, would fail to synthesize realistic geometries from sparse examples, for highly
+          deformable models with a large range of motion.
+          The key is to train a collection of mappings defined over regions locally in both the geometry and the pose
+          space.
+          Deformable fine-scale details are generated from a second nonlinear mapping between the control points and
+          per-vertex displacements.
+          We apply our modeling scheme to scanned human hand models, scanned face models, face models reconstructed from
+          multiview video sequences, and manually constructed dinosaur models.
+          Experiments show that our deformation models, learned from extremely sparse training data, are effective and
+          robust in synthesizing highly deformable models with rich fine features, for keyframe animation as well as
+          performance-driven animation.
+          We also compare our results with those obtained by alternative techniques.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="huang-deform-tvcg-2012-img.jpg"><img class="image" src="huang-deform-tvcg-2012-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012 technical report</span>
+        <div class="title">
+          FingerWalk: Controlling Human Gait Animation using Finger Walk <br> on a Multi-touch Surface
+        </div>
+        <div class="venue">
+          Technical report
+        </div>
+        <div class="author">
+          William Hutama &nbsp; &nbsp;
+          Thai-Duong Hoang &nbsp; &nbsp;
+          KangKang Yin &nbsp; &nbsp;
+          Chi-Wing Fu
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hutama-fingerwalk-2012-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hutama-fingerwalk-2012-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          This paper proposes analyzing finger touches on a conventional tablet computer to support locomotion control
+          of virtual characters.
+          Although human finger movements and leg movements are not fully equivalent kinematically and dynamically, we
+          can successfully extract intended gait parameters from finger touches to drive virtual avatars to locomote in
+          different styles.
+          User studies with 4 participants show that their finger pattern walk for different gaits such as variants of
+          walking (normal, fast, tip-toe) and running do not show significant variations in temporal profiles.
+          This suggests that the finger walk gestures on multi-touch tablets may have the potential for more universal
+          adoption as a convenient means for end users to control gait nuances of their avatar as they navigate in
+          virtual worlds and interact with other avatars.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hutama-fingerwalk-2012-img.jpg"><img class="image" src="hutama-fingerwalk-2012-img.jpg"></a>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012 journal paper, extended version of the MSSAO CGI'11 paper below</span>
+        <div class="title">
+          Efficient Screen-Space Approach to <br> High-Quality Multiscale Ambient Occlusion
+        </div>
+        <div class="venue">
+          <a href="https://link.springer.com/article/10.1007/s00371-011-0639-y">The Visual Computer</a>
+        </div>
+        <div class="author">
+          Thai-Duong Hoang &nbsp; &nbsp;
+          Kok-Lim Low &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-tvc-2012-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-cgi-2011-code.zip">Code</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-tvc-2012-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          We present a new screen-space ambient occlusion (SSAO) algorithm that improves on the state-of-the-art SSAO
+          methods in both performance and quality.
+          Our method computes ambient occlusion (AO) values at multiple image resolutions and combines them to obtain
+          the final, high-resolution AO value for each image pixel.
+          It produces high-quality AO that includes both high-frequency shadows due to nearby, occluding geometry and
+          low-frequency shadows due to distant geometry.
+          Our approach only needs to use very small sampling kernels at every resolution, thereby achieving high
+          performance without resorting to random sampling.
+          As a consequence, our results do not suffer from noise and excessive blur, which are common of other SSAO
+          methods.
+          Therefore, our method also avoid the expensive, final blur pass commonly used in other SSAO methods.
+          The use of multiple resolutions also helps reduce errors that are caused by SSAO’s inherent lack of visibility
+          checking.
+          Temporal incoherence caused by using coarse resolutions is solved with an optional temporal filtering pass.
+          Our method produces results that are closer to ray-traced solutions than those of any existing SSAO method’s,
+          while running at similar or higher frame rates than the fastest ones.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-mssao-tvc-2012-img.jpg"><img class="image" src="hoang-mssao-tvc-2012-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2011 conference paper</span>
+        <div class="title">
+          Multi-Resolution Screen-Space<br> Ambient Occlusion
+        </div>
+        <div class="venue">
+          <a href="http://cgi2011.site.uottawa.ca/CGI2011_proceedings/_files/proceedings.html">Computer Graphics
+            International Conference (CGI)</a>
+        </div>
+        <div class="author">
+          Thai-Duong Hoang &nbsp; &nbsp;
+          Kok-Lim Low &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-cgi-2011-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-cgi-2011-slides.pptx">Slides</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-cgi-2011-code.zip">Code</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/hoang-mssao-cgi-2011-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          We present a new screen-space ambient occlusion (SSAO) algorithm that improves on the state-of-the-art SSAO
+          methods in both speed and image quality.
+          Our method computes ambient occlusion (AO) for multiple image resolutions and combines them to obtain the
+          final high-resolution AO.
+          It produces high-quality AO that includes details from small local occluders to low-frequency occlusions from
+          large faraway occluders.
+          This approach allows us to use very small sampling kernels at every resolution, and thereby achieve high
+          performance without resorting to random sampling, and therefore our results do not suffer from noise and
+          excessive blur, which are common of SSAO.
+          We use bilateral upsampling to interpolate lower-resolution occlusion values to prevent blockiness and
+          occlusion leaks.
+          Compared to existing SSAO methods, our method produces results closer to ray-traced solutions, while running
+          at comparable or higher frame rates than the fastest SSAO method.
+        </div>
+        <div class="note2">
+          <a
+            href="https://web.archive.org/web/20160814122259/http://www.geforce.co.uk/whats-new/articles/assassins-creed-iii-launches-on-the-pc-with-impressive-tech-and-txaa">This
+            technique was used in Ubisoft's game Assassin's Creed III</a>
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-mssao-cgi-2011-img.jpg"><img class="image" src="hoang-mssao-cgi-2011-img.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2010 conference poster</span>
+        <div class="title">
+          Real-Time CSG Rendering <br>Using Fragment Sort
+        </div>
+        <div class="venue">
+          <a href="http://cgi2011.site.uottawa.ca/CGI2011_proceedings/_files/proceedings.html">ACM Symposium on Virtual
+            Reality Software and Technology (VRST)</a>
+        </div>
+        <div class="author">
+          Bo Peng &nbsp; &nbsp;
+          Kok-Lim Low &nbsp; &nbsp;
+          Thai-Duong Hoang &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/peng-csg-vrst-2010-paper.pdf">PDF</a> &nbsp; &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/peng-csg-vrst-2010-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+          We present a simple ray casting method to render a CSG product term.
+          The primitives are input as polygon meshes.
+          Our method uses the programmability on modern graphics hardware to capture at each pixel the depth values of
+          all the primitives’ surfaces.
+          By sorting these surface fragments in front-to-back order, we are able to find the CSG result at each pixel.
+          Our method does not maintain additional fragment information, and deferred shading is used for the final
+          rendering of the CSG result.
+          Our method is general in that there is no special handling needed for intersection and subtraction operations,
+          and non-convex primitives are treated equally as convex primitives.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="peng-csg-vrst-2010-img.jpg"><img class="image" src="peng-csg-vrst-2010-img.jpg"></a>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div class="footer-content">Last updated 20 November 2021</div>
+  </footer>
+
+</body>
+
+</html>

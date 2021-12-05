@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Duong Hoang's personal page </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans|Montserrat">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // When the user clicks on <div>, open the popup
+    function show(s) {
+      var element = document.getElementById(s);
+      console.log(element);
+      // element.visibility = "visible";
+      if (element.style.display == "block") {
+        element.style.display = "none";
+      } else {
+        element.style.display = "block";
+      }
+    }
+
+    function toggleImg(s) {
+      var modal = document.getElementById(s + "-modal");
+      var img = document.getElementById(s + "-fig");
+      var modalImg = document.getElementById(s + "-fig-modal");
+      var captionText = document.getElementById(s + "-caption");
+      modal.style.display = "table";
+      modalImg.src = img.src;
+      modalImg.display = "table-row";
+      //captionText.innerHTML = img.alt;
+      modal.onclick = function () {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</head>
+
+<body style="margin-bottom: 24px !important;">
+
+  <header>
+    <div class="header-content">
+      <h2>Duong Hoang /zuong hwang/ &nbsp; &#8212; &nbsp; Code</h2>
+      <div class="avatar"><img style="max-width:14%;" src="duong.png"></div>
+      <p style="margin-top: -7rem;"><small>
+          I am doing a PhD in Computer Science at the University of Utah. My research interests
+          include data compression, scientific data visualization and analysis, computer graphics,
+          scientific computing, and other topics in applied mathematics.
+          I can be reached via: {first name}@sci.utah.edu, github.com/hoangthaiduong, twitter.com/_dhoang, or
+          linkedin.com/in/hoangdt.
+          My latest <a href="https://www.sci.utah.edu/~duong/duong-hoang-resume-nov-21.pdf"> resume is here</a>.
+        </small></p>
+      <nav>
+        <a href="index.html"> Publications </a>
+        <a href="https://www.sci.utah.edu/~duong/blog/"> Blog </a>
+        <a href="code.html"
+          style="border-radius: 0.1rem; padding: 0.3rem; background-color:#BCEBED; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);">
+          Code </a>
+        <a href="notes.html"> Notes </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- <h1> Research  </h1> -->
+<!--     <div class="row">
+      <div class="column-left">
+        <span class="year">2018</span>
+        <div class="title">
+          Arithmetic Coder
+        </div>
+        <div class="venue">
+
+        </div>
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="https://www.sci.utah.edu/~duong/code/speck.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Arithmetic coder.
+        </div>
+      </div>
+      <div class="column-right">
+        <a href="speck.jpg"><img class="image" src="speck.jpg"></a>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2017</span>
+        <div class="title">
+          SPECK wavelet encoder
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="https://www.sci.utah.edu/~duong/code/speck.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          This is my C++ implementation of the well-known set-partitioning embedded block coder (<a
+            href="https://ieeexplore.ieee.org/abstract/document/1347192"><b>SPECK</b></a>) for compression of wavelet
+          coefficients.
+          SPECK was originally designed to compress images.
+          My implementation deals instead with high-precision scientific data, stored as 3D arrays of floating-points.
+          I wanted to benchmark the performance of the SPECK algorithm, but could not find an implementation online that
+          has all the features I needed, so I implemented it myself.
+          The implementation follows very closely the description of the algorithm in the <a
+            href="https://ieeexplore.ieee.org/abstract/document/1347192">original paper</a> by Pearlman et al.
+          The relevant code is in the file speck.h, but the zip file also contains other stuffs related to wavelet
+          transform.          
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="speck.jpg"><img class="image" src="speck.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2017</span>
+        <div class="title">
+          hana - fast and lightweight reader and writer for the IDX data format
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="https://github.com/hoangthaiduong/hana">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          hana is a library to read and write the <a href="https://visus.org/">IDX</a> binary format.
+          IDX is a data format that supports fast, progressive multiresolution queries for large 3D/4D scientific data
+          stored as regular grids.
+          hana can read IDX data only in a given region of interest, at a given resolution level, and store the result
+          as a regular gird in memory in row-major order.
+          Given a raw input array, hana can also convert this array into the IDX format and store the converted data to
+          disk, with optionally ZIP compression.
+          Compared to <a href="https://github.com/sci-visus/OpenVisus">OpenVISUS</a>, the official I/O code for IDX,
+          hana is a lot more lightweight and requires no dependencies other than the C++ STL.
+          It also runs quite a bit faster, and supports a more flexible progressive API for multiresolution queries.
+          OpenVISUS should be used, however, if more features are desired, such as the ability to stream data from a
+          remote server, or more compression methods such as JPEG.
+          The original reference for IDX is <a href="https://ieeexplore.ieee.org/document/1592821"><b>"Global Static
+              Indexing for Real-Time Exploration of Very Large Regular Grids"</b></a>, by Pascucci and Frank.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hana.jpg"><img class="image" src="hana.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2014</span>
+        <div class="title">
+          Global Illumination with Photon Mapping
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/path-tracing.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          I used photon mapping with final gathering to render this scene.
+          There are a couple of difficulties with the rendering.
+          The area light outside the window is difficult to sample, so I stored the first bounce in the photon map and
+          did not sample the light directly for the Monte Carlo bounce (the light is still sampled directly for the
+          first primary-ray bounce though).
+          The corners and creases of the scene make it hard for photons to get to, and those areas have the most noise
+          in the final rendering.
+          I used the Cozy Living Room model from TurboSquid.com. The scene comes with texture maps and materials for all
+          objects.
+          I rearranged the scene a bit, added a teapot, a stack of mangas (Love Hina), an open book, a poster for my
+          favorite anime Spirited Away, and a red U block which I modeled in Blender. I had to spend quite a bit of time
+          fixing the scene (mostly inverting normals) using a combination of Blender and MeshLab.
+          <p>
+            There are two light sources, both coming from outside through the window.
+            One of them is a strong sun light, the other is a weaker light that represents light coming from the outside
+            environment.
+            I set the angle and intensity of these light sources to make the scene have the look of a morning at 9am.
+            The window blinds prevents much of the light to come in, thus a large part of the scene is lit by indirect
+            light, giving it a soft, smoothing feel.
+            I used Blinn-Phong shading model with a Fresnel reflection term for all objects here.
+            I separated the direct and indirect lighting so that I didn't have to use 32 (Anti-Aliasing) x 512 (Monte
+            Carlo) samples for each pixel.
+            I also played a bit with pre-filtering the photon map but did not get very far with it.
+            Pre-filtering didn't seem to help in my case (I used a hash grid instead of a kd-tree to store the photon
+            map, so a nearest-point query is not quite cheaper than an intersecting sphere query, and is awkward to do).
+          </p>
+
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="photon-mapping.jpg"><img class="image" src="photon-mapping.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2014</span>
+        <div class="title">
+          Path Tracing on the CPU
+        </div>        
+        <div class="venue">
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/path-tracing.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          This is my multithreaded CPU path tracing code that supports area lights, soft shadows, glossy reflection, refraction, caustics, texture filtering, anti-aliasing with ray differentials, sub-pixel adaptive sampling, quasi-Monte Carlo sampling using the Halton sequence, and reconstruction filtering.
+          The code may be useful to you if you are new to computer graphics and want to learn the basics of ray/path tracing.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="path-tracing.jpg"><img class="image" src="path-tracing.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2014</span>
+        <div class="title">
+          Motion Graph
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/motion-graph.pdf">PDF</a> &nbsp;
+          <a href="http://sci.utah.edu/~duong/code/motion-graph.zip">Code</a> &nbsp;          
+          <a href="https://youtu.be/iOmwFq67OIk">Video</a> &nbsp;   
+        </div>
+        <div class="abstract">
+          In this project, we implement a basic motion graph, and test it on two different datasets.
+          Given a set of motion data in BVH file format, our program constructs a directed graph where each node is a motion frame and each edge connects either adjacent frames in the original motions, or frames in which the character has similar poses. 
+          We use the similarity metric and interpolation scheme described in <a href="https://dl.acm.org/doi/10.1145/566654.566605">[KGP02]</a>. 
+          This similarity metric does not use joint angles, thus we can avoid assigning weights to the joints. 
+          More importantly, it implicitly takes into account differences in not only positions but also velocities and accelerations. 
+          We interpolate using a window of frames to ensure smooth transitions.
+          By walking randomly in the graph, we can generate random, arbitrarily long motions, comprising of different short motion sequences in the database. 
+          Our character never gets stuck because our graph is pruned to get rid of dead ends. 
+          Due to time constraint, we are not able summarize the graph by clustering, address the foot skating problem due to interpolation, nor implement any graph search algorithms to constraint the synthesized motions.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="motion-graph.jpg"><img class="image" src="motion-graph.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2014</span>
+        <div class="title">
+          Inverse Kinematics <br>using Damped Least Squares
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/ik.pdf">PDF</a> &nbsp;
+          <a href="http://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;          
+        </div>
+        <div class="abstract">
+          In this project, I implement an inverse kinematics (IK) solver using the damped least squares (DLS) method. 
+          Compared to other popular methods for solving IK problems such as Jacobian transpose or pseudo-inverse, DLS is more stable near singularities, which means the animation is less jerky when the arms are fully stretched. 
+          The solver supports any combination of translational joints (1-dof) and rotational joints (1/2/3-dof). 
+          It can track multiple targets at the same time, while maintaining realtime framerates (60 FPS) for moderately complex bodies. 
+          Simple, per-dof joint limits are supported. 
+          The solver can also maintain a constraint on the horizontal position of the system’s center of mass.
+          The code is written in C++, using some of C++11's features.
+          To compile (on Windows), just use the provided Visual Studio 2010's solution file.
+          All external libraries are bundled in.
+          <br>
+          <em>Reference: Samuel R. Buss and Jin-Su Kim, Selectively Damped Least Squares for Inverse Kinematics, Journal of Graphics Tools, 10:37–49, 2004.</em>
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="ik_2-tile.jpg"><img class="image" src="ik_2-tile.jpg"></a>
+      </div>
+    </div>
+
+
+<!--     <div class="row">
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Core Resolution Transitor Detection
+        </div>
+        <div class="venue">
+
+        </div>
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Animation with Processing
+        </div>
+      </div>
+      <div class="column-right">
+        <a href="photon-mapping.jpg"><img class="image" src="photon-mapping.jpg"></a>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2013</span>
+        <div class="title">
+          ImageMapper: Image-Layout Matching<br> for Failure Analysis of Chip Fabrication
+        </div>
+        <div class="venue">
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <!-- <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/ik.7z">Website</a> &nbsp;
+        </div> -->
+        <div class="abstract">
+          Part of conventional CAD layout navigation in failure analysis work involves identifying defect regions and overlaying the physical image from the microscopes to a CAD database that links the design layout and its logical circuit schematic, along with net list navigation. 
+          Current manual alignment by feature points is inaccurate, slow and error-prone. 
+          With design layouts becoming increasingly more complex, this difficulty poses challenges to the productivity of failure analysis labs’ workflows.
+          ImageMapper, solves this problem by enabling fully-automatic search and alignment of inspection images to IC design layouts. 
+          ImageMapper has been deployed in <a href="https://www.synopsys.com/silicon/yield-management/avalon.html"><b>Avalon</b></a>, a CAD navigation software system for failure analysis from <a href="https://www.synopsys.com/"><b>Synopsys</b></a>, one of the world's leading EDA companies.
+          The key features of ImageMapper are:
+          <ul>
+            <li>Automatically matches and aligns die image to design layout</li>
+            <li>Aligns images of unknown scale, translation, rotation, and skew</li>
+            <li>Handles a wide range of image magnification</li>
+            <li>Works with images that show multiple layers of the chip</li>
+            <li>Supports SEM, FIB, and Optical Microscope images</li>   
+            <li>Detects repeated patterns</li>
+            <li>Is robust to fabrication defects and image noise</li>            
+          </ul>          
+          <p>
+          I was initially the sole developer for this software, and later lead a small team to continue developing during my employment at <a href="https://coreresolution.com/">Core Resolution</a>, a Singapore-based software startup.
+          ImageMapper solves a unique problem of matching an image to a design layout (which is not an image but rather a set of polygons).
+          I designed and implemented all the algorithms employed for this task.
+          Since this is a commercial software, there is no public code or documentation of the algorithms that I can publicly share.
+          </p>
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="cr.jpg"><img class="image" src="cr.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Assorted Interactive Visualization Codes <br>in Processing 
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/processing.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          These are small programs I wrote when I was learning the <a href="https://processing.org/">Processing language</a> (it is basically Java).
+          They range from simple shap drawing to somewhat complex animations using various pixel effects.
+          Most of the programs are interactive.
+          I still use Processing from time to time to make interactive technical demonstration for research ideas.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="processing_1-tile.jpg"><img class="image" src="processing_1-tile.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Smoothed Particle Hydrodynamics Demos
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/papers/sph.pdf">PDF</a> &nbsp;
+          <a href="http://sci.utah.edu/~duong/papers/sph.pptx">Slides</a> &nbsp;
+          <a href="http://sci.utah.edu/~duong/code/sph.7z">Code</a> &nbsp;
+          <a href="https://youtu.be/rOdGkh2QWpo">Video</a> &nbsp;
+        </div>
+        <div class="abstract">
+          I implement a Smoothed Particle Hydrodynamics (SPH) method to simulate water. 
+          My implementation follows closely the method described in <a href="https://dl.acm.org/doi/10.5555/846276.846298">[MCG03]</a>. 
+          The code also includes other performance optimizations, such as Z-indexing and sorting <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1467-8659.2010.01832.x">[IABT11]</a>, SIMD vectorization, and multicore parallelization. 
+          I test the implementation with six test scenes simulating different situations involving water, and show that our system is efficient and scalable.          
+          <ul>
+            <li>Dam break. A column of water initially occupying half of tank is collapsing, creating back and forth waves
+              from one side of the tank to the other.</li>
+            <li>Water drop. A volume of water is initially put in the air, above a water bed. It then falls down, creating
+              some waves.</li>
+            <li>Sink. A volume of water is falling down to the level below through a hole in the center.</li>
+            <li>Wave. A tank initially contains some water. One of the walls move back and forth periodically, creating
+              large waves to the other side.</li>
+            <li>Ball. A ball is dropping on a volume of water. The ball then move back and forth periodically, pushing the
+              water around.</li>
+            <li>A column of water is put into a container with the U shape ( ). The water flows from one side to the
+              other until equilibrium is reached.</li>
+          </ul>
+        In the video, for every scene, I use 6400 particles inside a volume of roughly 0.008 m^3. 
+        However, not all scenes use the same set of values for the parameters.         
+        For performance evaluation, I run the dam break scene on an Intel Core2 Duo 2.0GHz system with 2GB DDR2 RAM and a GeForce 8600M GT graphics card. 
+        With 6400 particles the frame rate is 22.15 fps, with 24000 particles, the demo runs at 4.85 fps. 
+        These results show that the performance linear with respect to the number of input particles.         
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="sph_1-tile.jpg"><img class="image" src="sph_1-tile.jpg"></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Assorted MATLAB Code for <br> Computational Photography Papers
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/computational_photography.7z">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          <b>Colorization</b>
+          I implement the colorization algorithm described in the paper by Anat Levin.
+          The code is a refactored version of the author’s code.
+          I remove seemingly redundant code, make variables’ names more readable, add comments to describe each step,
+          and implement another weighting function.
+          The code follows the paper closely, except for some tunable parameters which are important but never discussed
+          in the paper.
+          <em>Reference:
+            Colorization Using Optimization, Anat Levin, Dani Lischinski, Yair Weiss, ACM Transactions on Graphics,
+            Volume 23 Issue 3, Pages 689 - 694 </em>
+          <p>
+            <b>Flash/No flash</b>
+            I implement the Flash/No-Flash technique, following the paper very closely.
+            The only difference is in the calculation of shadow mask.
+            I use a simple heuristics: pixels that are in shadows caused by the flash have intensities below some
+            threshold.
+            <em>Reference:
+              Digital Photography with Flash and No-Flash Image Pairs, Georg Petschnigg, Richard Szeliski, Maneesh
+              Agrawala, Michael Cohen, Hugues Hoppe, Kentaro Toyama, ACM Transactions on Graphics, Volume 23 Issue 3,
+              2004, Pages 664 - 672 </em>
+          </p>
+          <p>
+            <b>Seam Carving</b>
+            I implement the dynamic programming algorithm described in the seam carving paper.
+            The implementation follows the paper exactly.
+            I do not implement the part where users can edit the energy field.
+            Image enlarging seems to be glossed over in the paper.
+            My algorithm enlarges an image by selecting k seams out of nk smallest seams (n = 1, 2, 3, etc).
+            When tracing back the k seams, if any two of them “merge” at some stage, I push them further away from each
+            other.
+            This is to prevent the stretching effect when the k seams are very close to one another.
+            <em>Reference:
+              Seam Carving for Content-Aware Image Resizing, Shai Avidan, Ariel Shamir, ACM Transactions on Graphics,
+              Volume 26 Issue 3, 2007, Article No. 10</em>
+          </p>
+          <p>
+            <b>Focal Stacking</b>
+            My focal stacking algorithm works by doing a deblur on a weighted sum of the input image stack.
+            For each pixel in each input image, a sharpness value is computed by summing the squared gradients in x and
+            y directions.
+            My algorithm then sums all input image using the sharpness values as weights.
+            It’s as if the result image was taken using a camera with a translating detector described in Hajime
+            Nagahara’s paper.
+            This image can then be deblurred with a PSF that has a similar shape to the one used in that paper (see the
+            Results section).
+            The Mask image is computed using the same weights, but with original pixel values being an input image’s
+            position in the stack.
+            <em>Reference:
+              Flexible Depth of Field Photography, Hajime Nagahara, Sujit Kuthirummal, Changyin Zhou, Shree K. Nayar,
+              Proceedings of the 10th European Conference on Computer Vision (ECCV '08'): Part IV, Pages 60 - 73 </em>
+          </p>
+          <p>
+            <b>Tone Mapping</b>
+            I implement four different tone mapping methods.
+            The first one is a linear map.
+            The second one is Erik Reinhard’s log-average method based on equations (1) and (2) in his paper.
+            The third one is Reihard’s global operator (equation (3)).
+            The fourth method is Reinhard’s dodge and burn method (equation (5), (6), (7), and (8)).
+            All methods except the first one follow the paper exactly.
+            <em>Reference:
+              Photographic Tone Reproduction for Digital Images, Erik Reinhard, Michael Stark, Peter Shirley, James
+              Ferwerda, ACM Transactions on Graphics, Volume 21 Issue 3, 2002, Pages 267 - 276 </em>
+          </p>
+
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="comp_photo_1-tile.jpg"><img class="image" src="comp_photo_1-tile.jpg"></a>
+      </div>
+    </div>
+
+<!--     <div class="row">
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Prolog compiler
+        </div>
+        <div class="venue">
+        </div>
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/path-tracing.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Prolog compiler
+        </div>
+      </div>
+      <div class="column-right">
+        <a href="photon-mapping.jpg"><img class="image" src="photon-mapping.jpg"></a>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2010</span>
+        <div class="title">
+          General Purpose Computation on GPU
+        </div>
+        <div class="venue">
+
+        </div>
+        <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/gpgpu.zip">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          The ZIP file contains some GPGPU codes: 
+          <ul>
+            <li>GLSL vertex and fragment shader to perform procedural bump mapping and reflection mapping</li>
+            <li>GLSL fragment shader to compute the inclusive all-prefix-sums (inclusive scan) of an input array on the GPU</li>
+            <li>CUDA kernels to perform discrete convolution</li>
+            <li>CUDA kernels to compute a sorted version of an input integer array with all the duplicate elements removed, using stream compaction and the scan-and-scatter approach</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="ripple.jpg"><img class="image" src="ripple.jpg"></a>
+      </div>
+    </div>
+
+<!--     <div class="row">
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Static analysis code written in JAVA
+        </div>
+        <div class="venue">
+
+        </div>
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Static analysis code written in JAVA
+        </div>
+      </div>
+      <div class="column-right">
+        <a href="photon-mapping.jpg"><img class="image" src="photon-mapping.jpg"></a>
+      </div>
+    </div> -->
+
+<!--     <div class="row">
+      <div class="column-left">
+        <span class="year">2012</span>
+        <div class="title">
+          Distributed systems game
+        </div>
+        <div class="venue">
+
+        </div>
+        <div class="author">
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;
+        </div>
+        <div class="abstract">
+          Distributed systems game
+        </div>
+      </div>
+      <div class="column-right">
+        <a href="photon-mapping.jpg"><img class="image" src="photon-mapping.jpg"></a>
+      </div>
+    </div> -->
+
+  </main>
+
+  <footer>
+    <div class="footer-content">Last updated 20 November 2021</div>
+  </footer>
+
+</body>
+
+</html>
