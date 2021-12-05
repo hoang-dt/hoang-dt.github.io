@@ -253,7 +253,7 @@
           Basically, if x is a known sample, we want the reconstructed function to interpolate x.
           If x is an unknown sample, we wish to set its Laplacian or bi-Laplacian to zero.          
           <p>
-          In this example, we use a 384 x 384-pixel slice from a 3D simulation dataset.
+          In this example, I used a 384 x 384-pixel slice from a 3D simulation dataset.
           This is produced by solving the bi-Laplacian equation on the subsampled data. 
           I used a bi-Conjugate gradient solver with an incomplete LU preconditioner (without which the iteration did not converge). 
           The initial guess is one in which the known samples are there, and the unknown ones are set to 0. 
