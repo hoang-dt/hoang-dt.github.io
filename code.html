@@ -2,7 +2,7 @@
 <html lang="en" style="">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes"/>
   <title> Duong Hoang's personal page </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans|Montserrat">
   <link rel="stylesheet" href="style.css">
@@ -41,7 +41,7 @@
 
   <header>
     <div class="header-content">
-      <h2>Duong Hoang /zuong hwang/ &nbsp; &#8212; &nbsp; Code</h2>
+      <h2>Duong Hoang &nbsp; &#8212; &nbsp; Code</h2>
       <div class="avatar"><img style="max-width:14%;" src="duong.png"></div>
       <p style="margin-top: -7rem;"><small>
         I am doing a PhD in Computer Science at the University of Utah, with my advisor <a href="https://www.pascucci.org/">Valerio Pascucci</a>.
@@ -52,7 +52,7 @@
         <p>
           Contact me via: <a href="mailto:duong@sci.utah.edu">email</a>, <a href="https://github.com/hoang-dt">GitHub</a>, <a href="https://twitter.com/hoangdt_">Twitter</a>, or <a href="https://www.linkedin.com/in/hoangdt/">LinkedIn</a>.
           Here are my <a href="https://www.sci.utah.edu/~duong/duong-resume.pdf"> resume</a> and <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F4KBgZLXly1OtcNiw8T3UH1iiR_kg8HxW_kQSxL955EezszYEjyz6CT5DYpsASTPtoUNOyh2ljSUcCHJcoocGCXW5APwAYPfLDO1xgpryl57XTbtk0&user=NXy2IAQAAAAJ">Google Scholar</a> profile.
-        </p>          
+        </p>
       </small></p>
       <nav>
         <a href="index.html"> Publications </a>
@@ -107,13 +107,13 @@
           <a href="https://arxiv.org/pdf/2007.15219">PDF</a> &nbsp; &nbsp;
         </div>
         <div class="abstract">
-          Since wavelet transforms are computed for powers of two, their practical application often require extending the signal to suitable lengths. 
-          Whereas several approaches exist for this extension (e.g., zero padding, linear extrapolation, and symmetric extension), each is associated with different types of boundary artifacts, such as discontinuous and nonsmooth signal that lead to large wavelet coefficients, which may or may not be conducive to an application.           
-          We present a new, linear-lifting approach to extend the input function at the boundary that avoids such artifacts and helps contain the number of unneccesary cells near the boundary. 
-          Specifically, our approach interleaves linear extrapolation with lifting steps to produce a function that is smooth across all dimensions. 
-          Unlike mirror-based extensions, linear extrapolation renders the lifting steps noninvertible, because to maintain the size of the data, the extrapolated coefficient is usually not kept in memory after the forward lifting step. 
-          In order to support perfect reconstruction, we choose to pay the extra storage cost and maintain the coefficient in memory. 
-          However, in practice, the inverse lifting steps are never performed, and thus the extrapolated function is never explicitly computed or stored.           
+          Since wavelet transforms are computed for powers of two, their practical application often require extending the signal to suitable lengths.
+          Whereas several approaches exist for this extension (e.g., zero padding, linear extrapolation, and symmetric extension), each is associated with different types of boundary artifacts, such as discontinuous and nonsmooth signal that lead to large wavelet coefficients, which may or may not be conducive to an application.
+          We present a new, linear-lifting approach to extend the input function at the boundary that avoids such artifacts and helps contain the number of unneccesary cells near the boundary.
+          Specifically, our approach interleaves linear extrapolation with lifting steps to produce a function that is smooth across all dimensions.
+          Unlike mirror-based extensions, linear extrapolation renders the lifting steps noninvertible, because to maintain the size of the data, the extrapolated coefficient is usually not kept in memory after the forward lifting step.
+          In order to support perfect reconstruction, we choose to pay the extra storage cost and maintain the coefficient in memory.
+          However, in practice, the inverse lifting steps are never performed, and thus the extrapolated function is never explicitly computed or stored.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -178,7 +178,7 @@
           The implementation follows very closely the description of the algorithm in the <a
             href="https://ieeexplore.ieee.org/abstract/document/1347192">original paper</a> by Pearlman et al.
           The relevant code is in the file speck.h, but the zip file also contains other stuffs related to wavelet
-          transform.          
+          transform.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -241,7 +241,7 @@
           <a href="bi-laplacian_weights.txt">Derivation</a> &nbsp; &nbsp;
           <a href="https://www.sci.utah.edu/~duong/code/bi-laplacian-interpolation.zip">Code</a> &nbsp; &nbsp;
         </div>
-        <div class="abstract">          
+        <div class="abstract">
           Given a 2D field sampled on a regular grid, we construct a multiresolution hierarchy by the following process.
           We first group the grid samples into blocks, then subsample the blocks by throwing away every other block along an axis to create the next coarser resolution level.
           The subsampling process can be done recursively on the subsequent resolution levels, alternating between the axes.
@@ -250,19 +250,19 @@
           During reconstruction, however, we need to solve the "hole-filling" problem, since now a number of blocks are missing and will need to be filled in by interpolation.
           I have implemented an interpolation method by solving the bi-Laplacian (or bi-harmonic) constraints.
           Basically, if x is a known sample, we want the reconstructed function to interpolate x.
-          If x is an unknown sample, we wish to set its Laplacian or bi-Laplacian to zero.          
+          If x is an unknown sample, we wish to set its Laplacian or bi-Laplacian to zero.
           <p>
           In this example, I used a 384 x 384-pixel slice from a 3D simulation dataset.
-          This is produced by solving the bi-Laplacian equation on the subsampled data. 
-          I used a bi-Conjugate gradient solver with an incomplete LU preconditioner (without which the iteration did not converge). 
-          The initial guess is one in which the known samples are there, and the unknown ones are set to 0. 
-          The number of iterations depend on the stopping tolerance, but is typically between 10 and 20. 
-          We can see that the top and right boundaries are not resolved well. 
+          This is produced by solving the bi-Laplacian equation on the subsampled data.
+          I used a bi-Conjugate gradient solver with an incomplete LU preconditioner (without which the iteration did not converge).
+          The initial guess is one in which the known samples are there, and the unknown ones are set to 0.
+          The number of iterations depend on the stopping tolerance, but is typically between 10 and 20.
+          We can see that the top and right boundaries are not resolved well.
           This is because we don't have known samples at these boundaries.
           In general, I noticed it becomes much harder for the iteration to converge every time we go down one level in resolution.
-          I had to tweak the preconditioner to make it more aggressive.           
+          I had to tweak the preconditioner to make it more aggressive.
           It may be interesting to see if a better initial guess (with bilinear interpolation for example) would help with convergence.
-          </p>          
+          </p>
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -329,7 +329,7 @@
         <span class="year">2014</span>
         <div class="title">
           Path Tracing on the CPU
-        </div>        
+        </div>
         <div class="venue">
         </div>
         <!-- <div class="note">&#9733; Best Paper Honorable Mention</div> -->
@@ -364,18 +364,18 @@
         </div>
         <div class="links">
           <a href="https://sci.utah.edu/~duong/papers/motion-graph.pdf">PDF</a> &nbsp;
-          <a href="https://sci.utah.edu/~duong/code/motion-graph.zip">Code</a> &nbsp;          
-          <a href="https://youtu.be/iOmwFq67OIk">Video</a> &nbsp;   
+          <a href="https://sci.utah.edu/~duong/code/motion-graph.zip">Code</a> &nbsp;
+          <a href="https://youtu.be/iOmwFq67OIk">Video</a> &nbsp;
         </div>
         <div class="abstract">
           In this project, we implement a basic motion graph, and test it on two different datasets.
-          Given a set of motion data in BVH file format, our program constructs a directed graph where each node is a motion frame and each edge connects either adjacent frames in the original motions, or frames in which the character has similar poses. 
-          We use the similarity metric and interpolation scheme described in <a href="https://dl.acm.org/doi/10.1145/566654.566605">[KGP02]</a>. 
-          This similarity metric does not use joint angles, thus we can avoid assigning weights to the joints. 
-          More importantly, it implicitly takes into account differences in not only positions but also velocities and accelerations. 
+          Given a set of motion data in BVH file format, our program constructs a directed graph where each node is a motion frame and each edge connects either adjacent frames in the original motions, or frames in which the character has similar poses.
+          We use the similarity metric and interpolation scheme described in <a href="https://dl.acm.org/doi/10.1145/566654.566605">[KGP02]</a>.
+          This similarity metric does not use joint angles, thus we can avoid assigning weights to the joints.
+          More importantly, it implicitly takes into account differences in not only positions but also velocities and accelerations.
           We interpolate using a window of frames to ensure smooth transitions.
-          By walking randomly in the graph, we can generate random, arbitrarily long motions, comprising of different short motion sequences in the database. 
-          Our character never gets stuck because our graph is pruned to get rid of dead ends. 
+          By walking randomly in the graph, we can generate random, arbitrarily long motions, comprising of different short motion sequences in the database.
+          Our character never gets stuck because our graph is pruned to get rid of dead ends.
           Due to time constraint, we are not able summarize the graph by clustering, address the foot skating problem due to interpolation, nor implement any graph search algorithms to constraint the synthesized motions.
         </div>
       </div>
@@ -400,14 +400,14 @@
         </div>
         <div class="links">
           <a href="https://sci.utah.edu/~duong/papers/ik.pdf">PDF</a> &nbsp;
-          <a href="https://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;          
+          <a href="https://sci.utah.edu/~duong/code/ik.7z">Code</a> &nbsp;
         </div>
         <div class="abstract">
-          In this project, I implement an inverse kinematics (IK) solver using the damped least squares (DLS) method. 
-          Compared to other popular methods for solving IK problems such as Jacobian transpose or pseudo-inverse, DLS is more stable near singularities, which means the animation is less jerky when the arms are fully stretched. 
-          The solver supports any combination of translational joints (1-dof) and rotational joints (1/2/3-dof). 
-          It can track multiple targets at the same time, while maintaining realtime framerates (60 FPS) for moderately complex bodies. 
-          Simple, per-dof joint limits are supported. 
+          In this project, I implement an inverse kinematics (IK) solver using the damped least squares (DLS) method.
+          Compared to other popular methods for solving IK problems such as Jacobian transpose or pseudo-inverse, DLS is more stable near singularities, which means the animation is less jerky when the arms are fully stretched.
+          The solver supports any combination of translational joints (1-dof) and rotational joints (1/2/3-dof).
+          It can track multiple targets at the same time, while maintaining realtime framerates (60 FPS) for moderately complex bodies.
+          Simple, per-dof joint limits are supported.
           The solver can also maintain a constraint on the horizontal position of the system’s center of mass.
           The code is written in C++, using some of C++11's features.
           To compile (on Windows), just use the provided Visual Studio 2010's solution file.
@@ -462,10 +462,10 @@
           <a href="https://sci.utah.edu/~duong/code/ik.7z">Website</a> &nbsp;
         </div> -->
         <div class="abstract">
-          Part of conventional CAD layout navigation in failure analysis work involves identifying defect regions and overlaying the physical image from the microscopes to a CAD database that links the design layout and its logical circuit schematic, along with net list navigation. 
-          Current manual alignment by feature points is inaccurate, slow and error-prone. 
+          Part of conventional CAD layout navigation in failure analysis work involves identifying defect regions and overlaying the physical image from the microscopes to a CAD database that links the design layout and its logical circuit schematic, along with net list navigation.
+          Current manual alignment by feature points is inaccurate, slow and error-prone.
           With design layouts becoming increasingly more complex, this difficulty poses challenges to the productivity of failure analysis labs’ workflows.
-          ImageMapper, solves this problem by enabling fully-automatic search and alignment of inspection images to IC design layouts. 
+          ImageMapper, solves this problem by enabling fully-automatic search and alignment of inspection images to IC design layouts.
           ImageMapper has been deployed in <a href="https://www.synopsys.com/silicon/yield-management/avalon.html"><b>Avalon</b></a>, a CAD navigation software system for failure analysis from <a href="https://www.synopsys.com/"><b>Synopsys</b></a>, one of the world's leading EDA companies.
           The key features of ImageMapper are:
           <ul>
@@ -473,10 +473,10 @@
             <li>Aligns images of unknown scale, translation, rotation, and skew</li>
             <li>Handles a wide range of image magnification</li>
             <li>Works with images that show multiple layers of the chip</li>
-            <li>Supports SEM, FIB, and Optical Microscope images</li>   
+            <li>Supports SEM, FIB, and Optical Microscope images</li>
             <li>Detects repeated patterns</li>
-            <li>Is robust to fabrication defects and image noise</li>            
-          </ul>          
+            <li>Is robust to fabrication defects and image noise</li>
+          </ul>
           <p>
           I was initially the sole developer for this software, and later lead a small team to continue developing during my employment at <a href="https://coreresolution.com/">Core Resolution</a>, a Singapore-based software startup.
           ImageMapper solves a unique problem of matching an image to a design layout (which is not an image but rather a set of polygons).
@@ -496,7 +496,7 @@
       <div class="column-left">
         <span class="year">2012</span>
         <div class="title">
-          Assorted Interactive Visualization Codes <br>in Processing 
+          Assorted Interactive Visualization Codes <br>in Processing
         </div>
         <div class="venue">
 
@@ -540,10 +540,10 @@
           <a href="https://youtu.be/rOdGkh2QWpo">Video</a> &nbsp;
         </div>
         <div class="abstract">
-          I implement a Smoothed Particle Hydrodynamics (SPH) method to simulate water. 
-          My implementation follows closely the method described in <a href="https://dl.acm.org/doi/10.5555/846276.846298">[MCG03]</a>. 
-          The code also includes other performance optimizations, such as Z-indexing and sorting <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1467-8659.2010.01832.x">[IABT11]</a>, SIMD vectorization, and multicore parallelization. 
-          I test the implementation with six test scenes simulating different situations involving water, and show that our system is efficient and scalable.          
+          I implement a Smoothed Particle Hydrodynamics (SPH) method to simulate water.
+          My implementation follows closely the method described in <a href="https://dl.acm.org/doi/10.5555/846276.846298">[MCG03]</a>.
+          The code also includes other performance optimizations, such as Z-indexing and sorting <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1467-8659.2010.01832.x">[IABT11]</a>, SIMD vectorization, and multicore parallelization.
+          I test the implementation with six test scenes simulating different situations involving water, and show that our system is efficient and scalable.
           <ul>
             <li>Dam break. A column of water initially occupying half of tank is collapsing, creating back and forth waves
               from one side of the tank to the other.</li>
@@ -557,11 +557,11 @@
             <li>A column of water is put into a container with the U shape ( ). The water flows from one side to the
               other until equilibrium is reached.</li>
           </ul>
-        In the video, for every scene, I use 6400 particles inside a volume of roughly 0.008 m^3. 
-        However, not all scenes use the same set of values for the parameters.         
-        For performance evaluation, I run the dam break scene on an Intel Core2 Duo 2.0GHz system with 2GB DDR2 RAM and a GeForce 8600M GT graphics card. 
-        With 6400 particles the frame rate is 22.15 fps, with 24000 particles, the demo runs at 4.85 fps. 
-        These results show that the performance linear with respect to the number of input particles.         
+        In the video, for every scene, I use 6400 particles inside a volume of roughly 0.008 m^3.
+        However, not all scenes use the same set of values for the parameters.
+        For performance evaluation, I run the dam break scene on an Intel Core2 Duo 2.0GHz system with 2GB DDR2 RAM and a GeForce 8600M GT graphics card.
+        With 6400 particles the frame rate is 22.15 fps, with 24000 particles, the demo runs at 4.85 fps.
+        These results show that the performance linear with respect to the number of input particles.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -698,7 +698,7 @@
           <a href="https://sci.utah.edu/~duong/code/gpgpu.zip">Code</a> &nbsp;
         </div>
         <div class="abstract">
-          The ZIP file contains some GPGPU codes: 
+          The ZIP file contains some GPGPU codes:
           <ul>
             <li>GLSL vertex and fragment shader to perform procedural bump mapping and reflection mapping</li>
             <li>GLSL fragment shader to compute the inclusive all-prefix-sums (inclusive scan) of an input array on the GPU</li>
