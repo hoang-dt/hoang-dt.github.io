@@ -2,7 +2,7 @@
 <html lang="en" style="">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes"/>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title> Duong Hoang's personal page </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans|Montserrat">
@@ -42,7 +42,7 @@
 
   <header>
     <div class="header-content">
-      <h2>Duong Hoang /zuong hwang/ &nbsp; &#8212; &nbsp; Publications</h2>
+      <h2>Duong Hoang &nbsp; &#8212; &nbsp; Publications</h2>
       <div class="avatar"><img style="max-width:14%;" src="duong.png"></div>
       <p style="margin-top: -7rem;"><small>
         I am doing a PhD in Computer Science at the University of Utah, with my advisor <a href="https://www.pascucci.org/">Valerio Pascucci</a>.
@@ -53,7 +53,7 @@
         <p>
           Contact me via: <a href="mailto:duong@sci.utah.edu">email</a>, <a href="https://github.com/hoang-dt">GitHub</a>, <a href="https://twitter.com/hoangdt_">Twitter</a>, or <a href="https://www.linkedin.com/in/hoangdt/">LinkedIn</a>.
           Here are my <a href="https://www.sci.utah.edu/~duong/duong-resume.pdf"> resume</a> and <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F4KBgZLXly1OtcNiw8T3UH1iiR_kg8HxW_kQSxL955EezszYEjyz6CT5DYpsASTPtoUNOyh2ljSUcCHJcoocGCXW5APwAYPfLDO1xgpryl57XTbtk0&user=NXy2IAQAAAAJ">Google Scholar</a> profile.
-        </p>          
+        </p>
       </small></p>
       <nav>
         <a href="https://www.sci.utah.edu/~duong/"
@@ -68,11 +68,56 @@
 
   <main>
     <!-- <h1> Research  </h1> -->
-
+    <div class="row" id="hoang-particles-ldav-2021">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2022 journal paper</span>
+        <div class="title">
+          AMM: Adaptive Multilinear Meshes
+        </div>
+        <div class="venue">
+          <a href="https://ieeexplore.ieee.org/document/9751449">IEEE Transactions on Visualization and Computer Graphics</a>
+        </div>
+        <div class="note">&#9733; Best Paper Award at PacificVis 2022</div>
+        <div class="author">
+          Harsh Bhatia &nbsp; &nbsp;
+          Duong Hoang &nbsp; &nbsp;
+          Nate Morrical &nbsp; &nbsp;
+          <br/>
+          Valerio Pascucci &nbsp; &nbsp;
+          Peer-Timo Bremer &nbsp; &nbsp;
+          Peter Lindstrom &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="http://sci.utah.edu/~hbhatia/pubs/2022_TVCG_amm.pdf">PDF</a> &nbsp;
+          &nbsp;
+          <a href="https://github.com/LLNL/AMM">Code</a> &nbsp; &nbsp;
+          &nbsp;
+          <a href="https://sci.utah.edu/~duong/papers/bhatia-amm-tvcg-2022-bib.txt">BibTeX</a>
+        </div>
+        <div class="abstract">
+        Adaptive representations are increasingly indispensable for reducing the in-memory and on-disk footprints of large-scale data.
+        Usual solutions are designed broadly along two themes: reducing data precision, e.g. , through compression, or adapting data resolution, e.g. , using spatial hierarchies.
+        Recent research suggests that combining the two approaches, i.e. , adapting both resolution and precision simultaneously, can offer significant gains over using them individually.
+        However, there currently exist no practical solutions to creating and evaluating such representations at scale.
+        In this work, we present a new resolution-precision-adaptive representation to support hybrid data reduction schemes and offer an interface to existing tools and algorithms.
+        Through novelties in spatial hierarchy, our representation, Adaptive Multilinear Meshes (AMM), provides considerable reduction in the mesh size.
+        AMM creates a piecewise multilinear representation of uniformly sampled scalar data and can selectively relax or enforce constraints on conformity, continuity, and coverage, delivering a flexible adaptive representation.
+        AMM also supports representing the function using mixed-precision values to further the achievable gains in data reduction.
+        We describe a practical approach to creating AMM incrementally using arbitrary orderings of data and demonstrate AMM on six types of resolution and precision datastreams.
+        By interfacing with state-of-the-art rendering tools through VTK, we demonstrate the practical and computational advantages of our representation for visualization techniques.
+        With an open-source release of our tool to create AMM, we make such evaluation of data reduction accessible to the community, which we hope will foster new opportunities and future data reduction schemes.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="bhatia-amm-tvcg-2022-img.jpg"><img class="image" src="bhatia-amm-tvcg-2022-img.jpg"></a>
+      </div>
+    </div>
 
     <div class="row" id="hoang-particles-ldav-2021">
       <!-- Title, venue, and abstract -->
-      <div class="column-left">        
+      <div class="column-left">
         <span class="year">2021 conference paper</span>
         <div class="title">
           High-Quality and Low-Memory-Footprint Progressive Decoding of<br> Large-scale Particle Data
@@ -133,7 +178,7 @@
       <div class="column-left">
         <span class="year">2021 conference paper</span>
         <div class="title">
-          Load-Balancing Parallel I/O of <br> Compressed Hierarchical Layouts          
+          Load-Balancing Parallel I/O of <br> Compressed Hierarchical Layouts
         </div>
         <div class="venue">
           IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC)
@@ -241,58 +286,7 @@
       </div>
     </div>
 
-    <div class="row">
-      <!-- Title, venue, and abstract -->
-      <div class="column-left">
-        <span class="year">2019 technical report</span>
-        <div class="title">
-          AMM: Adaptive Multilinear Meshes
-        </div>
-        <div class="venue">
-          <a href="https://arxiv.org/abs/2007.15219">arXiv e-prints, p.arXiv:2007.15219</a>
-        </div>
-        <div class="author">
-          Harsh Bhatia &nbsp; &nbsp;
-          Duong Hoang &nbsp; &nbsp;
-          Garrett Morrison &nbsp; &nbsp;
-          Will Usher <br>
-          Valerio Pascucci &nbsp; &nbsp;
-          Peer-Timo Bremer &nbsp; &nbsp;
-          Peter Lindstrom &nbsp; &nbsp;
-        </div>
-        <div class="links">
-          <a href="https://arxiv.org/pdf/2007.15219">PDF</a> &nbsp; &nbsp;
-          <a href="https://sci.utah.edu/~duong/papers/bhatia-amm-arXiv-2019-bib.txt">BibTeX</a>
-        </div>
-        <div class="abstract">
-          We present Adaptive Multilinear Meshes (AMM), a new framework that significantly reduces the memory
-          footprint compared to existing data structures.
-          AMM uses a hierarchy of cuboidal cells to create continuous, piecewise multilinear representation of
-          uniformly sampled data.
-          Furthermore, AMM can selectively relax or enforce constraints on conformity, continuity, and
-          coverage, creating a highly adaptive and flexible representation to support a wide range of use
-          cases.
-          AMM supports incremental updates in both spatial resolution and numerical precision establishing the
-          first practical data structure that can seamlessly explore the tradeoff between resolution and
-          precision.
-          We use tensor products of linear B-spline wavelets to create an adaptive representation and
-          illustrate the advantages of our framework.
-          AMM provides a simple interface for evaluating the function defined on the adaptive mesh,
-          efficiently traversing the mesh, and manipulating the mesh, including incremental, partial updates.
-          Our framework is easy to adopt for standard visualization and analysis tasks.
-          As an example, we provide a VTK interface, through efficient on-demand conversion, which can be used
-          directly by corresponding tools, such as VisIt, disseminating the advantages of faster processing
-          and a smaller memory footprint to a wider audience.
-          We demonstrate the advantages of our approach for simplifying scalar-valued data for commonly used
-          visualization and analysis tasks using incremental construction, according to mixed resolution and
-          precision data streams.
-        </div>
-      </div>
-      <!-- Image, authors, and links -->
-      <div class="column-right">
-        <a href="bhatia-amm-arXiv-2019-img.jpg"><img class="image" src="bhatia-amm-arXiv-2019-img.jpg"></a>
-      </div>
-    </div>
+
 
     <div class="row">
       <!-- Title, venue, and abstract -->
@@ -312,7 +306,7 @@
           Harsh Bhatia &nbsp; &nbsp;<br>
           Peer-Timo Bremer &nbsp; &nbsp;
           Peter Lindstrom &nbsp; &nbsp;
-          Valerio Pascucci &nbsp; &nbsp;          
+          Valerio Pascucci &nbsp; &nbsp;
         </div>
         <div class="links">
           <a href="https://sci.utah.edu/~duong/papers/hoang-study-tvcg-2019-paper.pdf">PDF</a> &nbsp; &nbsp;
@@ -496,16 +490,16 @@
           <a href="https://sci.utah.edu/~duong/papers/hoang-combustion-2015-bib.txt">BibTeX</a>
         </div>
         <div class="abstract">
-          Recent advances in high performance computing have enabled large scale scientific simulations that produce massive amounts of data, often on the order of terabytes or even petabytes. 
-          Analysis of such data on desktop workstations is difficult and often limited to only small subsets of the data or coarse resolutions yet can still be extremely time-consuming. 
-          Alternatively, one must resort to big computing clusters which are not easily available, difficult to program and with software often not flexible enough to provide custom, scalable analyses. 
-          Here we present a use case from turbulent combustion where scientist are interested in studying, for example, the heat release rate of turbulent flames in a simulation totaling more than 5.5 TB of data. 
-          This requires a non-trivial processing pipeline of extracting iso-surfaces, tracing lines normal to the surface and integrating the heat release for all 660 time steps to accumulate histograms and time curves. 
-          Using existing tools, this analysis even at reduced resolution, takes days and is thus rarely performed. 
-          Instead, we present a novel application based on light-weight streaming processing and fast multi-resolution disk accesses that enables this analysis to be done interactively using commodity hardware. 
-          In particular, our system allows scientist to immediately explore all parameters involved in the process, i.e. iso-values, integration lengths, etc., providing unprecedented analysis capabilities. 
-          Our application has already led to a number of interesting insights. 
-          For example, our results suggest using an adaptive iso-value and integration length for each time steps would lead to more accurate results. 
+          Recent advances in high performance computing have enabled large scale scientific simulations that produce massive amounts of data, often on the order of terabytes or even petabytes.
+          Analysis of such data on desktop workstations is difficult and often limited to only small subsets of the data or coarse resolutions yet can still be extremely time-consuming.
+          Alternatively, one must resort to big computing clusters which are not easily available, difficult to program and with software often not flexible enough to provide custom, scalable analyses.
+          Here we present a use case from turbulent combustion where scientist are interested in studying, for example, the heat release rate of turbulent flames in a simulation totaling more than 5.5 TB of data.
+          This requires a non-trivial processing pipeline of extracting iso-surfaces, tracing lines normal to the surface and integrating the heat release for all 660 time steps to accumulate histograms and time curves.
+          Using existing tools, this analysis even at reduced resolution, takes days and is thus rarely performed.
+          Instead, we present a novel application based on light-weight streaming processing and fast multi-resolution disk accesses that enables this analysis to be done interactively using commodity hardware.
+          In particular, our system allows scientist to immediately explore all parameters involved in the process, i.e. iso-values, integration lengths, etc., providing unprecedented analysis capabilities.
+          Our application has already led to a number of interesting insights.
+          For example, our results suggest using an adaptive iso-value and integration length for each time steps would lead to more accurate results.
           The new approach replaces a traditional batch-processing work flow, and provides a new paradigm in scientific discovery through interactive analysis of large simulation data.
         </div>
       </div>
