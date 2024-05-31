@@ -2,7 +2,8 @@
 <html lang="en" style="">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes" />
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title> Duong Hoang's personal page </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans|Montserrat">
@@ -45,14 +46,19 @@
       <h2>Duong Hoang &nbsp; &#8212; &nbsp; Publications</h2>
       <div class="avatar"><img style="max-width:14%;" src="duong.png"></div>
       <p style="margin-top: -7rem;"><small>
-        I hold a PhD in computer science from the University of Utah.
-        My areas of expertise include data compression, scientific visualization and analysis, and computer graphics. 
-        In general, though, I just like solving interesting problems in all areas of computer sciene and (applied) mathematics.
-        <p>
-          Contact me via: <a href="mailto:duong@sci.utah.edu">email</a>, <a href="https://github.com/hoang-dt">GitHub</a>, <a href="https://twitter.com/hoangdt_">Twitter</a>, or <a href="https://www.linkedin.com/in/hoangdt/">LinkedIn</a>.
-          Here are my <a href="https://www.sci.utah.edu/~duong/duong-resume.pdf"> resume</a> and <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F4KBgZLXly1OtcNiw8T3UH1iiR_kg8HxW_kQSxL955EezszYEjyz6CT5DYpsASTPtoUNOyh2ljSUcCHJcoocGCXW5APwAYPfLDO1xgpryl57XTbtk0&user=NXy2IAQAAAAJ">Google Scholar</a> profile.
-        </p>
-      </small></p>
+          I hold a PhD in computer science from the University of Utah.
+          My areas of expertise include data compression, scientific visualization and analysis, and computer graphics.
+          In general, though, I just like solving interesting problems in all areas of computer sciene and (applied)
+          mathematics.
+          <p>
+            Contact me via: <a href="mailto:duong@sci.utah.edu">email</a>, <a
+              href="https://github.com/hoang-dt">GitHub</a>, <a href="https://twitter.com/hoangdt_">Twitter</a>, or <a
+              href="https://www.linkedin.com/in/hoangdt/">LinkedIn</a>.
+            Here are my <a href="https://www.sci.utah.edu/~duong/duong-resume.pdf"> resume</a> and <a
+              href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F4KBgZLXly1OtcNiw8T3UH1iiR_kg8HxW_kQSxL955EezszYEjyz6CT5DYpsASTPtoUNOyh2ljSUcCHJcoocGCXW5APwAYPfLDO1xgpryl57XTbtk0&user=NXy2IAQAAAAJ">Google
+              Scholar</a> profile.
+          </p>
+        </small></p>
       <nav>
         <a href="https://www.sci.utah.edu/~duong/"
           style="border-radius: 0.1rem; padding: 0.3rem; background-color:#BCEBED; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);">
@@ -65,6 +71,49 @@
   </header>
 
   <main>
+    <div class="row" id="hoang-thesis-2023">
+      <!-- Title, venue, and abstract -->
+      <div class="column-left">
+        <span class="year">2023 PhD thesis</span>
+        <div class="title">
+          Compact and progressive encodings for task-adaptive queries of scientific data
+        </div>
+        <div class="author">
+          Duong Hoang &nbsp; &nbsp;
+        </div>
+        <div class="links">
+          <a href="hoang-pdf-thesis.pdf">PDF</a> &nbsp;
+          &nbsp;
+        </div>
+        <div class="abstract">
+          As computational power outpaces bandwidth, handling multi-petabyte datasets, which are easier to produce than
+          to store or access, becomes a challenge. Traditional solutions focus on data reduction through lossy
+          compression or downsampling, but many overlook considerations like the scientific tasks to be performed on the
+          data or the computational resources required. Additionally, there’s a lack of a common framework to gauge
+          these techniques’ efficacy and costs. This dissertation introduces such a framework and presents novel data
+          reduction techniques offering more holistic considerations and compelling trade-offs.
+          A novel hierarchical data model that unifies spatial resolution and numerical precision is developed. Most
+          current reduction techniques focus on either resolution or precision, but this new model allows for
+          approximations anywhere in the 2D space of resolution and precision, offering refined approximation in either
+          axis without necessarily refining the other.
+          A novel progressive streaming framework is proposed to study trade-offs between reducing resolution and
+          precision during common analysis tasks. Using the wavelet transform, both resolution and precision-based
+          reduction techniques can be modeled as different orderings of wavelet coefficient bits. This enables the
+          first-ever demonstration that reducing both resolution and precision is significantly more effective than
+          reducing either alone. It further allows the optimization of bit streams for specific analysis tasks, offering
+          insights about how different tasks fetch data.
+          Lastly, the new data model is adapted to encode unstructured particle data, a common form of data
+          representation in scientific simulation or imaging. Borrowing techniques from the structured case, it’s shown
+          that the odd-even decomposition can significantly reduce reconstruction error while maintaining a constant
+          memory footprint. This results in novel particle hierarchies and optimal traversal heuristics that outperform
+          traditional approaches in progressive decoding quality-cost trade-offs.
+        </div>
+      </div>
+      <!-- Image, authors, and links -->
+      <div class="column-right">
+        <a href="hoang-phd-thesis-img.jpg"><img class="image" src="hoang-phd-thesis-image.jpg"></a>
+      </div>
+    </div>
     <div class="row" id="hoang-progressive-tvcg-2023">
       <!-- Title, venue, and abstract -->
       <div class="column-left">
@@ -73,7 +122,8 @@
           Progressive Tree-Based Compression of Large-Scale Particle Data
         </div>
         <div class="venue">
-          <a href="https://ieeexplore.ieee.org/abstract/document/10085988">IEEE Transactions on Visualization and Computer Graphics</a>
+          <a href="https://ieeexplore.ieee.org/abstract/document/10085988">IEEE Transactions on Visualization and
+            Computer Graphics</a>
         </div>
         <div class="author">
           Duong Hoang &nbsp; &nbsp;
@@ -88,7 +138,15 @@
           &nbsp;
         </div>
         <div class="abstract">
-        Scientific simulations and observations using particles have been creating large datasets that require effective and efficient data reduction to store, transfer, and analyze. However, current approaches either compress only small data well while being inefficient for large data, or handle large data but with insufficient compression. Toward effective and scalable compression/decompression of particle positions, we introduce new kinds of particle hierarchies and corresponding traversal orders that quickly reduce reconstruction error while being fast and low in memory footprint. Our solution to compression of large-scale particle data is a flexible block-based hierarchy that supports progressive, random-access, and error-driven decoding, where error estimation heuristics can be supplied by the user. For low-level node encoding, we introduce new schemes that effectively compress both uniform and densely structured particle distributions.
+          Scientific simulations and observations using particles have been creating large datasets that require
+          effective and efficient data reduction to store, transfer, and analyze. However, current approaches either
+          compress only small data well while being inefficient for large data, or handle large data but with
+          insufficient compression. Toward effective and scalable compression/decompression of particle positions, we
+          introduce new kinds of particle hierarchies and corresponding traversal orders that quickly reduce
+          reconstruction error while being fast and low in memory footprint. Our solution to compression of large-scale
+          particle data is a flexible block-based hierarchy that supports progressive, random-access, and error-driven
+          decoding, where error estimation heuristics can be supplied by the user. For low-level node encoding, we
+          introduce new schemes that effectively compress both uniform and densely structured particle distributions.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -105,14 +163,15 @@
           High-Quality Progressive Alignment of Large 3D Microscopy Data
         </div>
         <div class="venue">
-          <a href="https://ieeexplore.ieee.org/document/9966406">IEEE Symposium on Large Data Analysis and Visualization (LDAV)</a>
+          <a href="https://ieeexplore.ieee.org/document/9966406">IEEE Symposium on Large Data Analysis and Visualization
+            (LDAV)</a>
         </div>
         <div class="author">
           Aniketh Venkat &nbsp; &nbsp;
           Duong Hoang &nbsp; &nbsp;
           Attila Gyulassy &nbsp; &nbsp;
           Peer-Timo Bremer &nbsp; &nbsp;
-          <br/>
+          <br />
           Frederick Federer &nbsp; &nbsp;
           Alessandra Angelucci &nbsp; &nbsp;
           Valerio Pascucci &nbsp; &nbsp;
@@ -122,7 +181,24 @@
           &nbsp;
         </div>
         <div class="abstract">
-        Large-scale three-dimensional (3D) microscopy acquisitions fre-quently create terabytes of image data at high resolution and magni-fication. Imaging large specimens at high magnifications requires acquiring 3D overlapping image stacks as tiles arranged on a two-dimensional (2D) grid that must subsequently be aligned and fused into a single 3D volume. Due to their sheer size, aligning many overlapping gigabyte-sized 3D tiles in parallel and at full resolution is memory intensive and often I/O bound. Current techniques trade accuracy for scalability, perform alignment on subsampled images, and require additional postprocess algorithms to refine the alignment quality, usually with high computational requirements. One common solution to the memory problem is to subdivide the overlap region into smaller chunks (sub-blocks) and align the sub-block pairs in parallel, choosing the pair with the most reliable alignment to determine the global transformation. Yet aligning all sub-block pairs at full resolution remains computationally expensive. The key to quickly developing a fast, high-quality, low-memory solution is to identify a single or a small set of sub-blocks that give good alignment at full resolution without touching all the overlapping data. In this paper, we present a new iterative approach that leverages coarse resolution alignments to progressively refine and align only the promising candidates at finer resolutions, thereby aligning only a small user-defined number of sub-blocks at full resolution to determine the lowest error transformation between pairwise overlapping tiles. Our progressive approach is 2.6x faster than the state of the art, requires less than 450MB of peak RAM (per parallel thread), and offers a higher quality alignment without the need for additional postprocessing refinement steps to correct for alignment errors.
+          Large-scale three-dimensional (3D) microscopy acquisitions fre-quently create terabytes of image data at high
+          resolution and magni-fication. Imaging large specimens at high magnifications requires acquiring 3D
+          overlapping image stacks as tiles arranged on a two-dimensional (2D) grid that must subsequently be aligned
+          and fused into a single 3D volume. Due to their sheer size, aligning many overlapping gigabyte-sized 3D tiles
+          in parallel and at full resolution is memory intensive and often I/O bound. Current techniques trade accuracy
+          for scalability, perform alignment on subsampled images, and require additional postprocess algorithms to
+          refine the alignment quality, usually with high computational requirements. One common solution to the memory
+          problem is to subdivide the overlap region into smaller chunks (sub-blocks) and align the sub-block pairs in
+          parallel, choosing the pair with the most reliable alignment to determine the global transformation. Yet
+          aligning all sub-block pairs at full resolution remains computationally expensive. The key to quickly
+          developing a fast, high-quality, low-memory solution is to identify a single or a small set of sub-blocks that
+          give good alignment at full resolution without touching all the overlapping data. In this paper, we present a
+          new iterative approach that leverages coarse resolution alignments to progressively refine and align only the
+          promising candidates at finer resolutions, thereby aligning only a small user-defined number of sub-blocks at
+          full resolution to determine the lowest error transformation between pairwise overlapping tiles. Our
+          progressive approach is 2.6x faster than the state of the art, requires less than 450MB of peak RAM (per
+          parallel thread), and offers a higher quality alignment without the need for additional postprocessing
+          refinement steps to correct for alignment errors.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -139,14 +215,15 @@
           AMM: Adaptive Multilinear Meshes
         </div>
         <div class="venue">
-          <a href="https://ieeexplore.ieee.org/document/9751449">IEEE Transactions on Visualization and Computer Graphics</a>
+          <a href="https://ieeexplore.ieee.org/document/9751449">IEEE Transactions on Visualization and Computer
+            Graphics</a>
         </div>
         <div class="note">&#9733; Best Paper Award at PacificVis 2022</div>
         <div class="author">
           Harsh Bhatia &nbsp; &nbsp;
           Duong Hoang &nbsp; &nbsp;
           Nate Morrical &nbsp; &nbsp;
-          <br/>
+          <br />
           Valerio Pascucci &nbsp; &nbsp;
           Peer-Timo Bremer &nbsp; &nbsp;
           Peter Lindstrom &nbsp; &nbsp;
@@ -159,17 +236,28 @@
           <a href="https://sci.utah.edu/~duong/papers/bhatia-amm-tvcg-2022-bib.txt">BibTeX</a>
         </div>
         <div class="abstract">
-        Adaptive representations are increasingly indispensable for reducing the in-memory and on-disk footprints of large-scale data.
-        Usual solutions are designed broadly along two themes: reducing data precision, e.g. , through compression, or adapting data resolution, e.g. , using spatial hierarchies.
-        Recent research suggests that combining the two approaches, i.e. , adapting both resolution and precision simultaneously, can offer significant gains over using them individually.
-        However, there currently exist no practical solutions to creating and evaluating such representations at scale.
-        In this work, we present a new resolution-precision-adaptive representation to support hybrid data reduction schemes and offer an interface to existing tools and algorithms.
-        Through novelties in spatial hierarchy, our representation, Adaptive Multilinear Meshes (AMM), provides considerable reduction in the mesh size.
-        AMM creates a piecewise multilinear representation of uniformly sampled scalar data and can selectively relax or enforce constraints on conformity, continuity, and coverage, delivering a flexible adaptive representation.
-        AMM also supports representing the function using mixed-precision values to further the achievable gains in data reduction.
-        We describe a practical approach to creating AMM incrementally using arbitrary orderings of data and demonstrate AMM on six types of resolution and precision datastreams.
-        By interfacing with state-of-the-art rendering tools through VTK, we demonstrate the practical and computational advantages of our representation for visualization techniques.
-        With an open-source release of our tool to create AMM, we make such evaluation of data reduction accessible to the community, which we hope will foster new opportunities and future data reduction schemes.
+          Adaptive representations are increasingly indispensable for reducing the in-memory and on-disk footprints of
+          large-scale data.
+          Usual solutions are designed broadly along two themes: reducing data precision, e.g. , through compression, or
+          adapting data resolution, e.g. , using spatial hierarchies.
+          Recent research suggests that combining the two approaches, i.e. , adapting both resolution and precision
+          simultaneously, can offer significant gains over using them individually.
+          However, there currently exist no practical solutions to creating and evaluating such representations at
+          scale.
+          In this work, we present a new resolution-precision-adaptive representation to support hybrid data reduction
+          schemes and offer an interface to existing tools and algorithms.
+          Through novelties in spatial hierarchy, our representation, Adaptive Multilinear Meshes (AMM), provides
+          considerable reduction in the mesh size.
+          AMM creates a piecewise multilinear representation of uniformly sampled scalar data and can selectively relax
+          or enforce constraints on conformity, continuity, and coverage, delivering a flexible adaptive representation.
+          AMM also supports representing the function using mixed-precision values to further the achievable gains in
+          data reduction.
+          We describe a practical approach to creating AMM incrementally using arbitrary orderings of data and
+          demonstrate AMM on six types of resolution and precision datastreams.
+          By interfacing with state-of-the-art rendering tools through VTK, we demonstrate the practical and
+          computational advantages of our representation for visualization techniques.
+          With an open-source release of our tool to create AMM, we make such evaluation of data reduction accessible to
+          the community, which we hope will foster new opportunities and future data reduction schemes.
         </div>
       </div>
       <!-- Image, authors, and links -->
@@ -553,17 +641,26 @@
           <a href="https://sci.utah.edu/~duong/papers/hoang-combustion-2015-bib.txt">BibTeX</a>
         </div>
         <div class="abstract">
-          Recent advances in high performance computing have enabled large scale scientific simulations that produce massive amounts of data, often on the order of terabytes or even petabytes.
-          Analysis of such data on desktop workstations is difficult and often limited to only small subsets of the data or coarse resolutions yet can still be extremely time-consuming.
-          Alternatively, one must resort to big computing clusters which are not easily available, difficult to program and with software often not flexible enough to provide custom, scalable analyses.
-          Here we present a use case from turbulent combustion where scientist are interested in studying, for example, the heat release rate of turbulent flames in a simulation totaling more than 5.5 TB of data.
-          This requires a non-trivial processing pipeline of extracting iso-surfaces, tracing lines normal to the surface and integrating the heat release for all 660 time steps to accumulate histograms and time curves.
+          Recent advances in high performance computing have enabled large scale scientific simulations that produce
+          massive amounts of data, often on the order of terabytes or even petabytes.
+          Analysis of such data on desktop workstations is difficult and often limited to only small subsets of the data
+          or coarse resolutions yet can still be extremely time-consuming.
+          Alternatively, one must resort to big computing clusters which are not easily available, difficult to program
+          and with software often not flexible enough to provide custom, scalable analyses.
+          Here we present a use case from turbulent combustion where scientist are interested in studying, for example,
+          the heat release rate of turbulent flames in a simulation totaling more than 5.5 TB of data.
+          This requires a non-trivial processing pipeline of extracting iso-surfaces, tracing lines normal to the
+          surface and integrating the heat release for all 660 time steps to accumulate histograms and time curves.
           Using existing tools, this analysis even at reduced resolution, takes days and is thus rarely performed.
-          Instead, we present a novel application based on light-weight streaming processing and fast multi-resolution disk accesses that enables this analysis to be done interactively using commodity hardware.
-          In particular, our system allows scientist to immediately explore all parameters involved in the process, i.e. iso-values, integration lengths, etc., providing unprecedented analysis capabilities.
+          Instead, we present a novel application based on light-weight streaming processing and fast multi-resolution
+          disk accesses that enables this analysis to be done interactively using commodity hardware.
+          In particular, our system allows scientist to immediately explore all parameters involved in the process, i.e.
+          iso-values, integration lengths, etc., providing unprecedented analysis capabilities.
           Our application has already led to a number of interesting insights.
-          For example, our results suggest using an adaptive iso-value and integration length for each time steps would lead to more accurate results.
-          The new approach replaces a traditional batch-processing work flow, and provides a new paradigm in scientific discovery through interactive analysis of large simulation data.
+          For example, our results suggest using an adaptive iso-value and integration length for each time steps would
+          lead to more accurate results.
+          The new approach replaces a traditional batch-processing work flow, and provides a new paradigm in scientific
+          discovery through interactive analysis of large simulation data.
         </div>
       </div>
       <!-- Image, authors, and links -->
